@@ -2,12 +2,13 @@
 ##########################
 # After commands module
 ##########################
-#import pexpect
 import subprocess
 import os
 from src.core import *
 
 # this will execute after everything is over
+
+
 def after_commands(command, install_location):
     # if there is more than one command iterate through
     if "," in command:
@@ -21,10 +22,13 @@ def after_commands(command, install_location):
             print_status("Sending after command: " + commands)
             # change directory if CD in command
             if "cd " in commands:
+                cwd = os.getcwd()
                 commands = commands.replace("cd ", "")
                 if os.path.isdir(commands):
                     os.chdir(commands)
-            else:
+            else:                
+                # this is commented out for now because for some reason it removes stdout for prompts
+                #subprocess.Popen(commands, stderr=subprocess.PIPE, shell=True).wait()
                 subprocess.Popen(commands, shell=True).wait()
 
         # restore original directory
@@ -32,4 +36,3 @@ def after_commands(command, install_location):
 
     else:
         subprocess.Popen(command, shell=True).wait()
-

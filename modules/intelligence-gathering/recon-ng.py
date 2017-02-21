@@ -20,13 +20,15 @@ REPOSITORY_LOCATION="https://bitbucket.org/LaNMaSteR53/recon-ng/"
 INSTALL_LOCATION="recon-ng"
 
 # DEPENDS FOR DEBIAN INSTALLS
-DEBIAN="python python-xlsxwriter python-crypto python-mechanize python-pip"
+DEBIAN="git python python-xlsxwriter python-crypto python-mechanize python-pip"
 
 # DEPENDS FOR FEDORA INSTALLS
 FEDORA="git,python,python-crypto,python-mechanize"
 
 # COMMANDS TO RUN AFTER
-AFTER_COMMANDS="python -m pip install --upgrade pip,python -m pip install dicttoxml PyPDF2"
+AFTER_COMMANDS="python -m pip install --upgrade pip,python -m pip install dicttoxml PyPDF2,cd {INSTALL_LOCATION},pip install -r REQUIREMENTS"
 
 # CREATE LAUNCHER
 LAUNCHER="recon-ng"
+
+BYPASS_UPDATE="YES"

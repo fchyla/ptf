@@ -1,4 +1,247 @@
 ~~~~~~~~~~~~~~~~~
+version 1.13.1
+~~~~~~~~~~~~~~~~~
+
+* fixed fedora as supported platform throwing fedora_modules error
+* changed github locations for the empyre and ps-empire changes
+
+~~~~~~~~~~~~~~~~~
+version 1.13
+~~~~~~~~~~~~~~~~~
+
+* added new field for modules called TOOL_DEPEND which allows you to specify other tools that are needed in order to install prereqs. Check README.md for more information.
+* added fido
+* fixed sparta ln usage
+
+~~~~~~~~~~~~~~~~~
+version 1.12
+~~~~~~~~~~~~~~~~~
+
+* add stickykeyslayer
+
+~~~~~~~~~~~~~~~~~
+version 1.11
+~~~~~~~~~~~~~~~~~
+
+* add inspy (git pr)
+* add gobuster (git pr)
+* add wso webshell (git pr)
+* depend fixes (git pr)
+* added aptitude as a check for debian as well as apt
+
+~~~~~~~~~~~~~~~~~
+version 1.10.2
+~~~~~~~~~~~~~~~~~
+
+* add jexboss JBOSS exploitation toolkit
+
+~~~~~~~~~~~~~~~~~
+version 1.10.1
+~~~~~~~~~~~~~~~~~
+
+* fixed gladius module missing debian var
+* fixed nonetype error when using update/install all
+
+~~~~~~~~~~~~~~~~~
+version 1.10
+~~~~~~~~~~~~~~~~~
+
+* allow use modules within other modules - no longer need to use back
+* add pipal (spoonman)
+* fix credcrack (bustedsec)
+* add spoopy-ng (bustedsec)
+* add nessus-parser (spoonman)
+* added fluxion (bustedsec)
+
+~~~~~~~~~~~~~~~~~
+version 1.9.2
+~~~~~~~~~~~~~~~~~
+
+* added phishery
+* added snoopy-ng
+
+~~~~~~~~~~~~~~~~~
+version 1.9.1
+~~~~~~~~~~~~~~~~~
+
+* fixed crackmapexec
+* vdbaan fix git #225 -> resolved -> PTF searches for modules based on the directory name (from INSTALL_LOCATION). This can differ from the filename given to the installer. (thanks!)
+* backHack Mobile App Analysis Android added (git pull)
+* added Invoke-Obfsucation
+* Added snarf, bettercap, wordsmith (git pull)
+* resolve os.getcwd() error messages when running after commands when directory wasn't available
+* added automatic download of the latest gpg keys for metasploit in case its expired
+
+~~~~~~~~~~~~~~~~~
+version 1.9
+~~~~~~~~~~~~~~~~~
+
+* new category powershell created
+* added babadook (powershell)
+* added empire (moved location)
+* added bloodhount (moved location)
+* added powersploit
+* added nishang powershell exploitation
+* added powersscm
+* added generate-macro
+* added excel payload
+* added nps (not powershell)
+* added new webshells directory and added blackarch webshells
+* added weevely webshell
+* added b374k webshell
+* added scancannon
+* removed annoying cwd error message, not needed and also removed old print statement
+* add a metasploit-reinstall if package broken
+* add badkeys
+
+~~~~~~~~~~~~~~~~~
+version 1.8.9
+~~~~~~~~~~~~~~~~~
+
+* added cowpatty (thanks matrixfox)
+* added pyrit
+* added ruler (post exploitation for exchange through mapi)
+
+~~~~~~~~~~~~~~~~~
+version 1.8.8
+~~~~~~~~~~~~~~~~~
+
+* create .msf4 directory if not already created for database support
+* re-added urlcrazy and switched it to file in order to have depends for discover
+
+~~~~~~~~~~~~~~~~~
+verison 1.8.7
+~~~~~~~~~~~~~~~~~
+
+* added armitage
+* added build-essentials as main depend when launching
+* added depend for aircrack-ng to work properly
+* fixed issue on ignore modules (PR)
+
+~~~~~~~~~~~~~~~~~
+version 1.8.6
+~~~~~~~~~~~~~~~~~
+
+* add modules/update_installed - this will only update tools that you have installed (thanks for the PR @jaredhaight)
+* put a patch in for whatsweb - the ruby modules are messed up so I included a patched version inside of PTF and patch it post install
+* fixed wafw00f module which was missing pluginbase requirement
+
+~~~~~~~~~~~~~~~~~
+version 1.8.5
+~~~~~~~~~~~~~~~~~
+
+* fixed an issue that would cause git pull not to work
+* added better handling around non .py/.pyc files
+* added automatic after_commands upon an actual update occurring to keep tools up to date
+
+~~~~~~~~~~~~~~~~~
+version 1.8.4
+~~~~~~~~~~~~~~~~~
+
+* fixed recon-ng module
+* fixed an issue with medusa
+* fixed msfdb.sh showing up on modules-install-all
+* fixed an issue where certain packages were not available on 16.04
+* added hashcat legacy for virtual machine support
+
+~~~~~~~~~~~~~~~~~
+version 1.8.3
+~~~~~~~~~~~~~~~~~
+
+* fixed an issue that would cause single or double quotes inside after_commands (or anything in module) to not properly run due to improper stripping of single and double quotes
+* added a warning prompt that you cannot use within an addition module
+
+~~~~~~~~~~~~~~~~~
+version 1.8.2
+~~~~~~~~~~~~~~~~~
+
+* added database support automation for metasploit
+
+~~~~~~~~~~~~~~~~~
+version 1.8.1
+~~~~~~~~~~~~~~~~~
+
+* added pip install requirements for recon-ng
+* added pip urllib3[secure] for discovery install
+* added path direction for /usr/local/bin if not there
+
+~~~~~~~~~~~~~~~~~
+version 1.8
+~~~~~~~~~~~~~~~~~
+
+* added samba-client to ridenum as prereq
+* added poshc2 (PR)
+* added title for cmd shell (PR) 
+* added fimap (PR)
+* changed install path from hardcoded to {INSTALL_LOCATION} in fimap
+* added title setting for terminal window (awesome PR thnx!)
+* switched to metasploit nightly installer vs. git direct pull (love you egyp7)
+* added full python3 compatibility and tested
+* fixed the crackmapexec installer (thanks lawry)
+* added so if git was used with BYPASS_UPDATES - it would still do a git pull
+
+~~~~~~~~~~~~~~~~~
+version 1.7.3
+~~~~~~~~~~~~~~~~~
+
+* added empyre - linux/osx post exploitation (harmj0y empire author)
+* removed old seclist under intelligence gathering
+
+~~~~~~~~~~~~~~~~~
+version 1.7.2
+~~~~~~~~~~~~~~~~~
+
+* number of module fixes, deps, and more (git commit)
+* added sniper tool for intel gathering
+
+~~~~~~~~~~~~~~~~~
+version 1.7.1
+~~~~~~~~~~~~~~~~~
+
+* added new tools: veil, cmsmap, sparta, prowl, lfi_scanner, nosqlmap
+
+~~~~~~~~~~~~~~~~~
+version 1.7
+~~~~~~~~~~~~~~~~~
+
+* added customized xml handler for zaproxy and added new zaproxy module
+* fixed metasploit 2.3 installation for pg install and updated ruby installer
+* fixed a few out of date ruby modules
+* added silent installation for apt-get - shouldn't prompt anymore
+* added single module install for debian, this will ensure that if theres an out of date package it doesnt hold back the rest of the depends from building right
+
+~~~~~~~~~~~~~~~~~
+version 1.6.6
+~~~~~~~~~~~~~~~~~
+
+* fixed tab completion double slashes appearing
+* fixed an issue that would cause ignore modules to not be accurate and still install
+
+~~~~~~~~~~~~~~~~~
+version 1.6.5
+~~~~~~~~~~~~~~~~~
+
+* added multiple new password recovery tools thanks to Martin Bos (@CantComputer)
+
+~~~~~~~~~~~~~~~~~
+version 1.6.4
+~~~~~~~~~~~~~~~~~
+
+* fixed mana install location
+* added depend of python-pymssql to SET
+
+~~~~~~~~~~~~~~~~~
+version 1.6.3
+~~~~~~~~~~~~~~~~~
+
+* fixed install location to properly work
+* removed sslsplit, python2-dpkt, python-pypcap
+* added new function for detection in Kali
+* added smart detection for Kali to not install Metasploit on there - packages are different
+* added pep8 compliance to PTF
+* added compatibility to python3 (doesn't mean modules will support python3 - just that ptf is python 3 if you wish
+
+~~~~~~~~~~~~~~~~~
 version 1.6.2
 ~~~~~~~~~~~~~~~~~
 
